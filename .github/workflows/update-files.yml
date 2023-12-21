@@ -40,6 +40,7 @@ jobs:
         run: |
           git config --global user.name "Gonz4lex"
           git config --global user.email "gonz4lex@users.noreply.github.com"
+          git add .
           git commit -m "add updated output files from workflow ${{ github.run_id }}"
           git push
-      - uses: actions/checkout@v3
+      # - uses: actions/checkout@v3
