@@ -31,7 +31,7 @@ jobs:
         run: "wkhtmltopdf --enable-local-file-access output/${{github.actor}}-resume.html output/${{github.actor}}-resume.pdf"
       - uses: actions/upload-artifact@master
         with: # basically this will put resume.md, resume.html, resume.pdf and style.css in a zip file.
-          name: ${{ github.actor }}\'s Resume
+          name: ${{ github.actor }} Resume
           path: output
       - name: "Push updated files to repo"
         run: /
