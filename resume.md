@@ -31,7 +31,7 @@ Skills
 ------
 **Programming:** Python, SQL, R, Julia, HTML/CSS, DAX
 
-**Libraries:** pandas, polars, numpy, sklearn, tensorflow, prophet, streamlit, nltk, pyspark
+**Libraries:** pandas, polars, numpy, sklearn, tensorflow, keras, prophet, streamlit, nltk, pyspark
 
 **Tools**: Azure, Google Cloud, PowerBI, Git
 
