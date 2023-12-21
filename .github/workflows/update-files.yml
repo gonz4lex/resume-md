@@ -27,14 +27,17 @@ jobs:
       - name: "Convert MD to HTML"
         run: |
           pandoc resume.md -f markdown -t html -c style.css -s -o output/${{github.actor}}-resume.html
+          cp output/${{github.actor}}-resume.html resume.html
       - name: "Convert HTML to PDF"
-        run: "wkhtmltopdf --enable-local-file-access output/${{github.actor}}-resume.html output/${{github.actor}}-resume.pdf"
+        run: |
+          wkhtmltopdf --enable-local-file-access output/${{github.actor}}-resume.html output/${{github.actor}}-resume.pdf
+          cp output/${{github.actor}}-resume.pdf resume.pdf
       - uses: actions/upload-artifact@master
         with: # basically this will put resume.md, resume.html, resume.pdf and style.css in a zip file.
           name: ${{ github.actor }} Resume
           path: output
       - name: "Push updated files to repo"
-        run: /
+        run: |
           git config --global user.name "Gonz4lex"
           git config --global user.email "gonz4lex@users.noreply.github.com"
           git commit -m "add updated output files from workflow ${{ github.run_id }}"
