@@ -36,6 +36,8 @@ jobs:
         with: # basically this will put resume.md, resume.html, resume.pdf and style.css in a zip file.
           name: ${{ github.actor }} Resume
           path: output
+      - name: "Delete binaries before commit"
+        run: rm ./pandoc-3.0.1-1-amd64.deb ./wkhtmltox_0.12.6.1-2.jammy_amd64.deb
       - name: "Push updated files to repo"
         run: |
           git config --global user.name "Gonz4lex"
@@ -43,4 +45,3 @@ jobs:
           git add .
           git commit -m "add updated output files from workflow ${{ github.run_id }}"
           git push
-      # - uses: actions/checkout@v3
